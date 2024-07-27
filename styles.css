@@ -2,34 +2,57 @@ html, body {
     margin: 0;
     padding: 0;
     width: 100%;
+    height: 100%;
 }
 
 body {
     background-color: #111315;
 }
 
+.header {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Altura completa de la ventana */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .header__image {
-    max-width: 100%; /* La imagen no excederá el ancho de su contenedor */
-    height: auto; /* Mantiene la proporción de la imagen */
-    object-fit: contain;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1; /* Mueve la imagen de fondo detrás del contenido */
 }
 
 .card {
-    padding: 10rem;
-    padding-top: 1rem;
+    padding: 2rem; /* Ajuste de padding para evitar valores excesivos */
     background-color: #1B1D1F;
-    width: 24rem;
+    width: 70%; /* Ajustar el ancho para que no sobresalga */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-left: 10rem;
+    color: #FEF7EE;
+    border-radius: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para un mejor diseño */
+    z-index: 1; /* Asegura que el contenido esté encima de la imagen */
+    max-width: 100%; /* Asegura que la tarjeta no sobresalga del contenedor */
+    overflow: hidden; /* Evita que el contenido sobresalga de la tarjeta */
+    position: absolute; /* Permite el posicionamiento en relación al contenedor */
+    top: 130%; /* Posiciona verticalmente en el medio del contenedor */
+    left: 50%; /* Posiciona horizontalmente en el medio del contenedor */
+    transform: translate(-50%, -40%); /* Ajuste para centrar y elevar un poco */
 }
 
-
 .producto__imagen {
-    width: 10rem;
+    width: 100%; /* Ajuste de ancho al contenedor */
     border-radius: 1rem;
+    object-fit: cover; /* Asegura que la imagen mantenga su proporción */
+    height: auto; /* Permite que la altura se ajuste automáticamente */
 }
 
 .producto {
@@ -42,6 +65,19 @@ body {
     gap: 3rem;
     margin: 0;
     height: 1.7rem;
+}
+
+.precio__producto {
+    background-color: #BEE3CC;
+    color: #111315;
+    border-radius: 0.3rem;
+    height: 1.2rem;
+    width: 2.1rem;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
 }
 
 .valoracion {
@@ -58,7 +94,9 @@ p {
 
 .productos {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr); /* Tres columnas */
     gap: 1rem;
-   
+    width: 100%; /* Asegura que el contenedor de productos no sobresalga */
+    padding: 0 1rem; /* Añade padding para evitar que las imágenes se recorten en los bordes */
+    box-sizing: border-box; /* Incluye el padding en el tamaño total del elemento */
 }
