@@ -1,4 +1,11 @@
-html, body {
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+
+
+
+
+
+html,
+body {
     margin: 0;
     padding: 0;
     width: 100%;
@@ -7,12 +14,15 @@ html, body {
 
 body {
     background-color: #111315;
+    font-family: "DM Sans", sans-serif;
+    font-size: 16px;
 }
 
 .header {
     position: relative;
     width: 100%;
-    height: 100vh; /* Altura completa de la ventana */
+    height: 100vh;
+    /* Altura completa de la ventana */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -25,34 +35,72 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    z-index: -1; /* Mueve la imagen de fondo detrás del contenido */
+    z-index: -1;
+    /* Mueve la imagen de fondo detrás del contenido */
 }
 
 .card {
-    padding: 2rem; /* Ajuste de padding para evitar valores excesivos */
+    padding: 2rem;
+    /* Ajuste de padding para evitar valores excesivos */
     background-color: #1B1D1F;
-    width: 70%; /* Ajustar el ancho para que no sobresalga */
+    width: 70%;
+    /* Ajustar el ancho para que no sobresalga */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     color: #FEF7EE;
     border-radius: 1rem;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para un mejor diseño */
-    z-index: 1; /* Asegura que el contenido esté encima de la imagen */
-    max-width: 100%; /* Asegura que la tarjeta no sobresalga del contenedor */
-    overflow: hidden; /* Evita que el contenido sobresalga de la tarjeta */
-    position: absolute; /* Permite el posicionamiento en relación al contenedor */
-    top: 130%; /* Posiciona verticalmente en el medio del contenedor */
-    left: 50%; /* Posiciona horizontalmente en el medio del contenedor */
-    transform: translate(-50%, -40%); /* Ajuste para centrar y elevar un poco */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Sombra para un mejor diseño */
+    z-index: 1;
+    /* Asegura que el contenido esté encima de la imagen */
+    max-width: 100%;
+    /* Asegura que la tarjeta no sobresalga del contenedor */
+    overflow: hidden;
+    /* Evita que el contenido sobresalga de la tarjeta */
+    position: absolute;
+    /* Permite el posicionamiento en relación al contenedor */
+    top: 145%;
+    /* Posiciona verticalmente en el medio del contenedor */
+    left: 50%;
+    /* Posiciona horizontalmente en el medio del contenedor */
+    transform: translate(-50%, -40%);
+    /* Ajuste para centrar y elevar un poco */
+    margin-bottom: 10rem;
 }
 
+.card__texto {
+    text-align: center;
+    width: 30rem;
+}
+
+
+.nav {
+    margin: 2rem;
+    display: flex;
+    gap: 2rem;
+}
+
+a {
+    text-decoration: none;
+    color: #FEF7EE;
+    background-color: #6F757C;
+    padding: 5px;
+    border-radius: 4px;
+    font-family: "DM Sans", sans-serif;
+    font-size: 14px;
+}
+
+
 .producto__imagen {
-    width: 100%; /* Ajuste de ancho al contenedor */
+    width: 100%;
+    /* Ajuste de ancho al contenedor */
     border-radius: 1rem;
-    object-fit: cover; /* Asegura que la imagen mantenga su proporción */
-    height: auto; /* Permite que la altura se ajuste automáticamente */
+    object-fit: cover;
+    /* Asegura que la imagen mantenga su proporción */
+    height: auto;
+    /* Permite que la altura se ajuste automáticamente */
 }
 
 .producto {
@@ -62,7 +110,7 @@ body {
 .nombre_precio {
     display: flex;
     flex-direction: row;
-    gap: 3rem;
+    gap: 9rem;
     margin: 0;
     height: 1.7rem;
 }
@@ -94,9 +142,90 @@ p {
 
 .productos {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Tres columnas */
+    grid-template-columns: repeat(3, 1fr);
+    /* Tres columnas */
     gap: 1rem;
-    width: 100%; /* Asegura que el contenedor de productos no sobresalga */
-    padding: 0 1rem; /* Añade padding para evitar que las imágenes se recorten en los bordes */
-    box-sizing: border-box; /* Incluye el padding en el tamaño total del elemento */
+    width: 100%;
+    /* Asegura que el contenedor de productos no sobresalga */
+    padding: 0 1rem;
+    /* Añade padding para evitar que las imágenes se recorten en los bordes */
+    box-sizing: border-box;
+    /* Incluye el padding en el tamaño total del elemento */
+}
+
+@media (max-width: 1024px) {
+    .header {
+        padding-bottom: 5rem;
+    }
+
+    .header__image {
+        height: auto;
+    }
+
+    .card {
+        width: 90%;
+        padding: 1rem;
+        margin-top: 2rem;
+        margin-bottom: 5rem;
+        top: 120%;
+
+    }
+
+    .card__titulo {
+        font-size: 1.5rem;
+    }
+
+    .card__texto {
+        width: 100%;
+        max-width: 25rem;
+    }
+
+    .nav {
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .productos {
+        grid-template-columns: repeat(2, 1fr);
+        /* Dos columnas */
+        padding: 0;
+    }
+}
+
+
+@media (max-width: 640px) {
+    .header {
+        padding-bottom: 5rem;
+    }
+
+    .header__image {
+        height: auto;
+    }
+
+    .card {
+        width: 60%;
+        padding: 1rem;
+        margin-top: 2rem;
+        margin-bottom: 5rem;
+        top: 240%;
+    }
+
+    .card__titulo {
+        font-size: 1.5rem;
+    }
+
+    .card__texto {
+        width: 100%;
+        max-width: 25rem;
+    }
+
+    .nav {
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .productos {
+        grid-template-columns: repeat(1, 1fr);
+        padding: 0;
+    }
 }
